@@ -1,0 +1,50 @@
+datasource postgres {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id              String           @id @default(cuid())
+  creatTime       DateTime         @default(now())
+  lastLoginTime   DateTime         @updatedAt
+  trueName        String?
+  username        String           @unique
+  password        String
+  roles           Json
+  oauthType       String?
+  openId          String?
+  sessionKey      String?
+  unionId         String?
+  inviterId       String?
+  nickName        String?
+  avatarUrl       String?
+  gender          EnumUserGender?
+  birthday        DateTime?
+  userIdCard      String?
+  country         String?
+  province        String?
+  city            String?
+  language        String?
+  hubitusCheckups HubitusCheckup[]
+}
+
+model HubitusCheckup {
+  id             String   @id @default(cuid())
+  testTime       DateTime @default(now())
+  currentHabitus String?
+  testResult     String?
+  countResult    String?
+  suggest        String?
+  userId         User?    @relation(fields: [userIdId], references: [id])
+  userIdId       String?
+}
+
+enum EnumUserGender {
+  Unknown
+  Male
+  Female
+}
