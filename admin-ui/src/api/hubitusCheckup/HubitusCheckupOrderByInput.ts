@@ -7,5 +7,5 @@ export type HubitusCheckupOrderByInput = {
   testResult?: SortOrder;
   countResult?: SortOrder;
   suggest?: SortOrder;
-  userIdId?: SortOrder;
+  userId?: SortOrder;
 };

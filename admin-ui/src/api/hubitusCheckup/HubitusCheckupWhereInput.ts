@@ -4,9 +4,9 @@ import { UserWhereUniqueInput } from "../user/UserWhereUniqueInput";
 
 export type HubitusCheckupWhereInput = {
   id?: StringFilter;
-  currentHabitus?: StringNullableFilter;
-  testResult?: StringNullableFilter;
-  countResult?: StringNullableFilter;
+  currentHabitus?: StringFilter;
+  testResult?: StringFilter;
+  countResult?: StringFilter;
   suggest?: StringNullableFilter;
-  userId?: UserWhereUniqueInput;
+  user?: UserWhereUniqueInput;
 };

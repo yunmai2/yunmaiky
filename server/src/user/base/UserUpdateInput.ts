@@ -101,7 +101,7 @@ class UserUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  oauthType?: string | null;
+  oauthType?: string;
 
   @ApiProperty({
     required: false,
@@ -112,7 +112,7 @@ class UserUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  openId?: string | null;
+  openId?: string;
 
   @ApiProperty({
     required: false,
@@ -123,7 +123,7 @@ class UserUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  sessionKey?: string | null;
+  sessionKey?: string;
 
   @ApiProperty({
     required: false,
@@ -134,7 +134,7 @@ class UserUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  unionId?: string | null;
+  unionId?: string;
 
   @ApiProperty({
     required: false,

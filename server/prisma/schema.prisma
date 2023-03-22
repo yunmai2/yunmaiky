@@ -15,10 +15,10 @@ model User {
   username        String           @unique
   password        String
   roles           Json
-  oauthType       String?
-  openId          String?
-  sessionKey      String?
-  unionId         String?
+  oauthType       String
+  openId          String
+  sessionKey      String
+  unionId         String
   inviterId       String?
   nickName        String?
   avatarUrl       String?
@@ -35,12 +35,12 @@ model User {
 model HubitusCheckup {
   id             String   @id @default(cuid())
   testTime       DateTime @default(now())
-  currentHabitus String?
-  testResult     String?
-  countResult    String?
+  currentHabitus String
+  testResult     String
+  countResult    String
   suggest        String?
-  userId         User?    @relation(fields: [userIdId], references: [id])
-  userIdId       String?
+  user           User?    @relation(fields: [userId], references: [id])
+  userId         String?
 }
 
 enum EnumUserGender {

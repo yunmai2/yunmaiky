@@ -7,10 +7,10 @@ export type UserWhereInput = {
   id?: StringFilter;
   trueName?: StringNullableFilter;
   username?: StringFilter;
-  oauthType?: StringNullableFilter;
-  openId?: StringNullableFilter;
-  sessionKey?: StringNullableFilter;
-  unionId?: StringNullableFilter;
+  oauthType?: StringFilter;
+  openId?: StringFilter;
+  sessionKey?: StringFilter;
+  unionId?: StringFilter;
   inviterId?: StringNullableFilter;
   nickName?: StringNullableFilter;
   avatarUrl?: StringNullableFilter;

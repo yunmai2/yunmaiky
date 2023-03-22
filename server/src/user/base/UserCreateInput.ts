@@ -78,48 +78,36 @@ class UserCreateInput {
   roles!: InputJsonValue;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: String,
   })
   @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  oauthType?: string | null;
+  @Field(() => String)
+  oauthType!: string;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: String,
   })
   @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  openId?: string | null;
+  @Field(() => String)
+  openId!: string;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: String,
   })
   @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  sessionKey?: string | null;
+  @Field(() => String)
+  sessionKey!: string;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: String,
   })
   @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  unionId?: string | null;
+  @Field(() => String)
+  unionId!: string;
 
   @ApiProperty({
     required: false,

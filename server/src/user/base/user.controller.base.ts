@@ -292,7 +292,7 @@ export class UserControllerBase {
         countResult: true,
         suggest: true,
 
-        userId: {
+        user: {
           select: {
             id: true,
           },
