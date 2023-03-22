@@ -8,10 +8,10 @@ export type UserCreateInput = {
   username: string;
   password: string;
   roles: InputJsonValue;
-  oauthType?: string | null;
-  openId?: string | null;
-  sessionKey?: string | null;
-  unionId?: string | null;
+  oauthType: string;
+  openId: string;
+  sessionKey: string;
+  unionId: string;
   inviterId?: string | null;
   nickName?: string | null;
   avatarUrl?: string | null;

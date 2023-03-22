@@ -2,9 +2,9 @@ import { UserWhereUniqueInput } from "../user/UserWhereUniqueInput";
 
 export type HubitusCheckupCreateInput = {
   testTime: Date;
-  currentHabitus?: string | null;
-  testResult?: string | null;
-  countResult?: string | null;
+  currentHabitus: string;
+  testResult: string;
+  countResult: string;
   suggest?: string | null;
-  userId?: UserWhereUniqueInput | null;
+  user?: UserWhereUniqueInput | null;
 };

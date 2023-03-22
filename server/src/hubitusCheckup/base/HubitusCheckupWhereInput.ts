@@ -32,36 +32,36 @@ class HubitusCheckupWhereInput {
 
   @ApiProperty({
     required: false,
-    type: StringNullableFilter,
+    type: StringFilter,
   })
-  @Type(() => StringNullableFilter)
+  @Type(() => StringFilter)
   @IsOptional()
-  @Field(() => StringNullableFilter, {
+  @Field(() => StringFilter, {
     nullable: true,
   })
-  currentHabitus?: StringNullableFilter;
+  currentHabitus?: StringFilter;
 
   @ApiProperty({
     required: false,
-    type: StringNullableFilter,
+    type: StringFilter,
   })
-  @Type(() => StringNullableFilter)
+  @Type(() => StringFilter)
   @IsOptional()
-  @Field(() => StringNullableFilter, {
+  @Field(() => StringFilter, {
     nullable: true,
   })
-  testResult?: StringNullableFilter;
+  testResult?: StringFilter;
 
   @ApiProperty({
     required: false,
-    type: StringNullableFilter,
+    type: StringFilter,
   })
-  @Type(() => StringNullableFilter)
+  @Type(() => StringFilter)
   @IsOptional()
-  @Field(() => StringNullableFilter, {
+  @Field(() => StringFilter, {
     nullable: true,
   })
-  countResult?: StringNullableFilter;
+  countResult?: StringFilter;
 
   @ApiProperty({
     required: false,
@@ -84,7 +84,7 @@ class HubitusCheckupWhereInput {
   @Field(() => UserWhereUniqueInput, {
     nullable: true,
   })
-  userId?: UserWhereUniqueInput;
+  user?: UserWhereUniqueInput;
 }
 
 export { HubitusCheckupWhereInput as HubitusCheckupWhereInput };
