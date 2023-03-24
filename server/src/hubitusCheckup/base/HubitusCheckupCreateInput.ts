@@ -26,37 +26,28 @@ class HubitusCheckupCreateInput {
   testTime!: Date;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: String,
   })
   @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  currentHabitus?: string | null;
+  @Field(() => String)
+  currentHabitus!: string;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: String,
   })
   @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  testResult?: string | null;
+  @Field(() => String)
+  testResult!: string;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: String,
   })
   @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  countResult?: string | null;
+  @Field(() => String)
+  countResult!: string;
 
   @ApiProperty({
     required: false,
@@ -79,7 +70,7 @@ class HubitusCheckupCreateInput {
   @Field(() => UserWhereUniqueInput, {
     nullable: true,
   })
-  userId?: UserWhereUniqueInput | null;
+  user?: UserWhereUniqueInput | null;
 }
 
 export { HubitusCheckupCreateInput as HubitusCheckupCreateInput };

@@ -9,38 +9,56 @@ generator client {
 
 model User {
   id              String           @id @default(cuid())
-  creatTime       DateTime         @default(now())
-  lastLoginTime   DateTime         @updatedAt
-  trueName        String?
   username        String           @unique
   password        String
   roles           Json
-  oauthType       String?
-  openId          String?
-  sessionKey      String?
-  unionId         String?
-  inviterId       String?
-  nickName        String?
-  avatarUrl       String?
+  lastLoginTime   DateTime         @updatedAt
+  trueName        String?
+  creatTime       DateTime         @default(now())
   gender          EnumUserGender?
+  hubitusCheckups HubitusCheckup[]
+  openId          String
+  sessionKey      String
+  unionId         String
+  inviterId       String?
   birthday        DateTime?
+  nickName        String?
   userIdCard      String?
+  avatarUrl       String?
   country         String?
   province        String?
   city            String?
   language        String?
-  hubitusCheckups HubitusCheckup[]
+  oauthType       String
 }
 
 model HubitusCheckup {
   id             String   @id @default(cuid())
   testTime       DateTime @default(now())
-  currentHabitus String?
-  testResult     String?
-  countResult    String?
+  currentHabitus String
+  testResult     String
+  countResult    String
   suggest        String?
-  userId         User?    @relation(fields: [userIdId], references: [id])
-  userIdId       String?
+  user           User?    @relation(fields: [userId], references: [id])
+  userId         String?
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  productname String
+  price       Float?
+  orders      Order[]
+}
+
+model Order {
+  orderNo   String
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  proId     Product? @relation(fields: [proIdId], references: [id])
+  proIdId   String?
 }
 
 enum EnumUserGender {
