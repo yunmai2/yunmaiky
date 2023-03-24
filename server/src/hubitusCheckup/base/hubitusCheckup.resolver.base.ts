@@ -99,9 +99,9 @@ export class HubitusCheckupResolverBase {
       data: {
         ...args.data,
 
-        userId: args.data.userId
+        user: args.data.user
           ? {
-              connect: args.data.userId,
+              connect: args.data.user,
             }
           : undefined,
       },
@@ -124,9 +124,9 @@ export class HubitusCheckupResolverBase {
         data: {
           ...args.data,
 
-          userId: args.data.userId
+          user: args.data.user
             ? {
-                connect: args.data.userId,
+                connect: args.data.user,
               }
             : undefined,
         },
@@ -169,8 +169,8 @@ export class HubitusCheckupResolverBase {
     action: "read",
     possession: "any",
   })
-  async userId(@graphql.Parent() parent: HubitusCheckup): Promise<User | null> {
-    const result = await this.service.getUserId(parent.id);
+  async user(@graphql.Parent() parent: HubitusCheckup): Promise<User | null> {
+    const result = await this.service.getUser(parent.id);
 
     if (!result) {
       return null;

@@ -53,9 +53,9 @@ export class HubitusCheckupControllerBase {
       data: {
         ...data,
 
-        userId: data.userId
+        user: data.user
           ? {
-              connect: data.userId,
+              connect: data.user,
             }
           : undefined,
       },
@@ -67,7 +67,7 @@ export class HubitusCheckupControllerBase {
         countResult: true,
         suggest: true,
 
-        userId: {
+        user: {
           select: {
             id: true,
           },
@@ -100,7 +100,7 @@ export class HubitusCheckupControllerBase {
         countResult: true,
         suggest: true,
 
-        userId: {
+        user: {
           select: {
             id: true,
           },
@@ -134,7 +134,7 @@ export class HubitusCheckupControllerBase {
         countResult: true,
         suggest: true,
 
-        userId: {
+        user: {
           select: {
             id: true,
           },
@@ -171,9 +171,9 @@ export class HubitusCheckupControllerBase {
         data: {
           ...data,
 
-          userId: data.userId
+          user: data.user
             ? {
-                connect: data.userId,
+                connect: data.user,
               }
             : undefined,
         },
@@ -185,7 +185,7 @@ export class HubitusCheckupControllerBase {
           countResult: true,
           suggest: true,
 
-          userId: {
+          user: {
             select: {
               id: true,
             },
@@ -227,7 +227,7 @@ export class HubitusCheckupControllerBase {
           countResult: true,
           suggest: true,
 
-          userId: {
+          user: {
             select: {
               id: true,
             },

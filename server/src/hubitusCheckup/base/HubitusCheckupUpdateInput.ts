@@ -37,7 +37,7 @@ class HubitusCheckupUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  currentHabitus?: string | null;
+  currentHabitus?: string;
 
   @ApiProperty({
     required: false,
@@ -48,7 +48,7 @@ class HubitusCheckupUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  testResult?: string | null;
+  testResult?: string;
 
   @ApiProperty({
     required: false,
@@ -59,7 +59,7 @@ class HubitusCheckupUpdateInput {
   @Field(() => String, {
     nullable: true,
   })
-  countResult?: string | null;
+  countResult?: string;
 
   @ApiProperty({
     required: false,
@@ -82,7 +82,7 @@ class HubitusCheckupUpdateInput {
   @Field(() => UserWhereUniqueInput, {
     nullable: true,
   })
-  userId?: UserWhereUniqueInput | null;
+  user?: UserWhereUniqueInput | null;
 }
 
 export { HubitusCheckupUpdateInput as HubitusCheckupUpdateInput };

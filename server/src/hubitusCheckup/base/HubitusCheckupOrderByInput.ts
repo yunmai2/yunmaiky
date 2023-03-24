@@ -79,7 +79,7 @@ class HubitusCheckupOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  userIdId?: SortOrder;
+  userId?: SortOrder;
 }
 
 export { HubitusCheckupOrderByInput as HubitusCheckupOrderByInput };

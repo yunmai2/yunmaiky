@@ -34,37 +34,28 @@ class HubitusCheckup {
   testTime!: Date;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: String,
   })
   @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  currentHabitus!: string | null;
+  @Field(() => String)
+  currentHabitus!: string;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: String,
   })
   @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  testResult!: string | null;
+  @Field(() => String)
+  testResult!: string;
 
   @ApiProperty({
-    required: false,
+    required: true,
     type: String,
   })
   @IsString()
-  @IsOptional()
-  @Field(() => String, {
-    nullable: true,
-  })
-  countResult!: string | null;
+  @Field(() => String)
+  countResult!: string;
 
   @ApiProperty({
     required: false,
@@ -84,7 +75,7 @@ class HubitusCheckup {
   @ValidateNested()
   @Type(() => User)
   @IsOptional()
-  userId?: User | null;
+  user?: User | null;
 }
 
 export { HubitusCheckup as HubitusCheckup };

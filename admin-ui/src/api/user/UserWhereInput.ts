@@ -1,25 +1,25 @@
 import { StringFilter } from "../../util/StringFilter";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
-import { DateTimeNullableFilter } from "../../util/DateTimeNullableFilter";
 import { HubitusCheckupListRelationFilter } from "../hubitusCheckup/HubitusCheckupListRelationFilter";
+import { DateTimeNullableFilter } from "../../util/DateTimeNullableFilter";
 
 export type UserWhereInput = {
   id?: StringFilter;
-  trueName?: StringNullableFilter;
   username?: StringFilter;
-  oauthType?: StringNullableFilter;
-  openId?: StringNullableFilter;
-  sessionKey?: StringNullableFilter;
-  unionId?: StringNullableFilter;
-  inviterId?: StringNullableFilter;
-  nickName?: StringNullableFilter;
-  avatarUrl?: StringNullableFilter;
+  trueName?: StringNullableFilter;
   gender?: "Unknown" | "Male" | "Female";
+  hubitusCheckups?: HubitusCheckupListRelationFilter;
+  openId?: StringFilter;
+  sessionKey?: StringFilter;
+  unionId?: StringFilter;
+  inviterId?: StringNullableFilter;
   birthday?: DateTimeNullableFilter;
+  nickName?: StringNullableFilter;
   userIdCard?: StringNullableFilter;
+  avatarUrl?: StringNullableFilter;
   country?: StringNullableFilter;
   province?: StringNullableFilter;
   city?: StringNullableFilter;
   language?: StringNullableFilter;
-  hubitusCheckups?: HubitusCheckupListRelationFilter;
+  oauthType?: StringFilter;
 };

@@ -16,8 +16,8 @@ import { Type } from "class-transformer";
 import { IsOptional, IsEnum, ValidateNested } from "class-validator";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { EnumUserGender } from "./EnumUserGender";
-import { DateTimeNullableFilter } from "../../util/DateTimeNullableFilter";
 import { HubitusCheckupListRelationFilter } from "../../hubitusCheckup/base/HubitusCheckupListRelationFilter";
+import { DateTimeNullableFilter } from "../../util/DateTimeNullableFilter";
 
 @InputType()
 class UserWhereInput {
@@ -31,17 +31,6 @@ class UserWhereInput {
     nullable: true,
   })
   id?: StringFilter;
-
-  @ApiProperty({
-    required: false,
-    type: StringNullableFilter,
-  })
-  @Type(() => StringNullableFilter)
-  @IsOptional()
-  @Field(() => StringNullableFilter, {
-    nullable: true,
-  })
-  trueName?: StringNullableFilter;
 
   @ApiProperty({
     required: false,
@@ -63,73 +52,7 @@ class UserWhereInput {
   @Field(() => StringNullableFilter, {
     nullable: true,
   })
-  oauthType?: StringNullableFilter;
-
-  @ApiProperty({
-    required: false,
-    type: StringNullableFilter,
-  })
-  @Type(() => StringNullableFilter)
-  @IsOptional()
-  @Field(() => StringNullableFilter, {
-    nullable: true,
-  })
-  openId?: StringNullableFilter;
-
-  @ApiProperty({
-    required: false,
-    type: StringNullableFilter,
-  })
-  @Type(() => StringNullableFilter)
-  @IsOptional()
-  @Field(() => StringNullableFilter, {
-    nullable: true,
-  })
-  sessionKey?: StringNullableFilter;
-
-  @ApiProperty({
-    required: false,
-    type: StringNullableFilter,
-  })
-  @Type(() => StringNullableFilter)
-  @IsOptional()
-  @Field(() => StringNullableFilter, {
-    nullable: true,
-  })
-  unionId?: StringNullableFilter;
-
-  @ApiProperty({
-    required: false,
-    type: StringNullableFilter,
-  })
-  @Type(() => StringNullableFilter)
-  @IsOptional()
-  @Field(() => StringNullableFilter, {
-    nullable: true,
-  })
-  inviterId?: StringNullableFilter;
-
-  @ApiProperty({
-    required: false,
-    type: StringNullableFilter,
-  })
-  @Type(() => StringNullableFilter)
-  @IsOptional()
-  @Field(() => StringNullableFilter, {
-    nullable: true,
-  })
-  nickName?: StringNullableFilter;
-
-  @ApiProperty({
-    required: false,
-    type: StringNullableFilter,
-  })
-  @Type(() => StringNullableFilter)
-  @IsOptional()
-  @Field(() => StringNullableFilter, {
-    nullable: true,
-  })
-  avatarUrl?: StringNullableFilter;
+  trueName?: StringNullableFilter;
 
   @ApiProperty({
     required: false,
@@ -141,6 +64,62 @@ class UserWhereInput {
     nullable: true,
   })
   gender?: "Unknown" | "Male" | "Female";
+
+  @ApiProperty({
+    required: false,
+    type: () => HubitusCheckupListRelationFilter,
+  })
+  @ValidateNested()
+  @Type(() => HubitusCheckupListRelationFilter)
+  @IsOptional()
+  @Field(() => HubitusCheckupListRelationFilter, {
+    nullable: true,
+  })
+  hubitusCheckups?: HubitusCheckupListRelationFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringFilter,
+  })
+  @Type(() => StringFilter)
+  @IsOptional()
+  @Field(() => StringFilter, {
+    nullable: true,
+  })
+  openId?: StringFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringFilter,
+  })
+  @Type(() => StringFilter)
+  @IsOptional()
+  @Field(() => StringFilter, {
+    nullable: true,
+  })
+  sessionKey?: StringFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringFilter,
+  })
+  @Type(() => StringFilter)
+  @IsOptional()
+  @Field(() => StringFilter, {
+    nullable: true,
+  })
+  unionId?: StringFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  inviterId?: StringNullableFilter;
 
   @ApiProperty({
     required: false,
@@ -162,7 +141,29 @@ class UserWhereInput {
   @Field(() => StringNullableFilter, {
     nullable: true,
   })
+  nickName?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
   userIdCard?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  avatarUrl?: StringNullableFilter;
 
   @ApiProperty({
     required: false,
@@ -210,15 +211,14 @@ class UserWhereInput {
 
   @ApiProperty({
     required: false,
-    type: () => HubitusCheckupListRelationFilter,
+    type: StringFilter,
   })
-  @ValidateNested()
-  @Type(() => HubitusCheckupListRelationFilter)
+  @Type(() => StringFilter)
   @IsOptional()
-  @Field(() => HubitusCheckupListRelationFilter, {
+  @Field(() => StringFilter, {
     nullable: true,
   })
-  hubitusCheckups?: HubitusCheckupListRelationFilter;
+  oauthType?: StringFilter;
 }
 
 export { UserWhereInput as UserWhereInput };
