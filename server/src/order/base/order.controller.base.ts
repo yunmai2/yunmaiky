@@ -51,19 +51,19 @@ export class OrderControllerBase {
       data: {
         ...data,
 
-        proId: data.proId
+        product: data.product
           ? {
-              connect: data.proId,
+              connect: data.product,
             }
           : undefined,
       },
       select: {
-        orderNo: true,
         id: true,
         createdAt: true,
         updatedAt: true,
+        orderNo: true,
 
-        proId: {
+        product: {
           select: {
             id: true,
           },
@@ -89,12 +89,12 @@ export class OrderControllerBase {
     return this.service.findMany({
       ...args,
       select: {
-        orderNo: true,
         id: true,
         createdAt: true,
         updatedAt: true,
+        orderNo: true,
 
-        proId: {
+        product: {
           select: {
             id: true,
           },
@@ -121,12 +121,12 @@ export class OrderControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
-        orderNo: true,
         id: true,
         createdAt: true,
         updatedAt: true,
+        orderNo: true,
 
-        proId: {
+        product: {
           select: {
             id: true,
           },
@@ -163,19 +163,19 @@ export class OrderControllerBase {
         data: {
           ...data,
 
-          proId: data.proId
+          product: data.product
             ? {
-                connect: data.proId,
+                connect: data.product,
               }
             : undefined,
         },
         select: {
-          orderNo: true,
           id: true,
           createdAt: true,
           updatedAt: true,
+          orderNo: true,
 
-          proId: {
+          product: {
             select: {
               id: true,
             },
@@ -210,12 +210,12 @@ export class OrderControllerBase {
       return await this.service.delete({
         where: params,
         select: {
-          orderNo: true,
           id: true,
           createdAt: true,
           updatedAt: true,
+          orderNo: true,
 
-          proId: {
+          product: {
             select: {
               id: true,
             },

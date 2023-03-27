@@ -24,12 +24,12 @@ export const ProductShow = (props: ShowProps): React.ReactElement => {
         <TextField label="price" source="price" />
         <ReferenceManyField reference="Order" target="ProductId" label="orders">
           <Datagrid rowClick="show">
-            <TextField label="orderNO" source="orderNo" />
             <TextField label="ID" source="id" />
             <DateField source="createdAt" label="Created At" />
             <DateField source="updatedAt" label="Updated At" />
+            <TextField label="orderNO" source="orderNo" />
             <ReferenceField
-              label="proID"
+              label="product"
               source="product.id"
               reference="Product"
             >

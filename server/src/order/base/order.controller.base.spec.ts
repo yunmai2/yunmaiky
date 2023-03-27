@@ -19,30 +19,30 @@ import { OrderService } from "../order.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
-  orderNo: "exampleOrderNo",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
+  orderNo: "exampleOrderNo",
 };
 const CREATE_RESULT = {
-  orderNo: "exampleOrderNo",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
+  orderNo: "exampleOrderNo",
 };
 const FIND_MANY_RESULT = [
   {
-    orderNo: "exampleOrderNo",
     id: "exampleId",
     createdAt: new Date(),
     updatedAt: new Date(),
+    orderNo: "exampleOrderNo",
   },
 ];
 const FIND_ONE_RESULT = {
-  orderNo: "exampleOrderNo",
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
+  orderNo: "exampleOrderNo",
 };
 
 const service = {

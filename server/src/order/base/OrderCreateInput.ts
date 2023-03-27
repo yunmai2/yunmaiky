@@ -35,7 +35,7 @@ class OrderCreateInput {
   @Field(() => ProductWhereUniqueInput, {
     nullable: true,
   })
-  proId?: ProductWhereUniqueInput | null;
+  product?: ProductWhereUniqueInput | null;
 }
 
 export { OrderCreateInput as OrderCreateInput };

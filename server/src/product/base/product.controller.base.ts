@@ -210,12 +210,12 @@ export class ProductControllerBase {
     const results = await this.service.findOrders(params.id, {
       ...query,
       select: {
-        orderNo: true,
         id: true,
         createdAt: true,
         updatedAt: true,
+        orderNo: true,
 
-        proId: {
+        product: {
           select: {
             id: true,
           },

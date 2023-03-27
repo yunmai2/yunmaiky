@@ -47,11 +47,11 @@ export class OrderServiceBase {
     return this.prisma.order.delete(args);
   }
 
-  async getProId(parentId: string): Promise<Product | null> {
+  async getProduct(parentId: string): Promise<Product | null> {
     return this.prisma.order
       .findUnique({
         where: { id: parentId },
       })
-      .proId();
+      .product();
   }
 }
