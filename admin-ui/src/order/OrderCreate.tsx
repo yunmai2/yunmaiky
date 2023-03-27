@@ -14,7 +14,7 @@ export const OrderCreate = (props: CreateProps): React.ReactElement => {
     <Create {...props}>
       <SimpleForm>
         <TextInput label="orderNO" source="orderNo" />
-        <ReferenceInput source="product.id" reference="Product" label="proID">
+        <ReferenceInput source="product.id" reference="Product" label="product">
           <SelectInput optionText={ProductTitle} />
         </ReferenceInput>
       </SimpleForm>

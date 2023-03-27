@@ -53,12 +53,12 @@ model Product {
 }
 
 model Order {
-  orderNo   String
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  proId     Product? @relation(fields: [proIdId], references: [id])
-  proIdId   String?
+  orderNo   String
+  product   Product? @relation(fields: [productId], references: [id])
+  productId String?
 }
 
 enum EnumUserGender {

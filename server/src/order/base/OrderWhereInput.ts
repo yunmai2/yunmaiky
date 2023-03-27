@@ -27,7 +27,7 @@ class OrderWhereInput {
   @Field(() => StringFilter, {
     nullable: true,
   })
-  orderNo?: StringFilter;
+  id?: StringFilter;
 
   @ApiProperty({
     required: false,
@@ -38,7 +38,7 @@ class OrderWhereInput {
   @Field(() => StringFilter, {
     nullable: true,
   })
-  id?: StringFilter;
+  orderNo?: StringFilter;
 
   @ApiProperty({
     required: false,
@@ -50,7 +50,7 @@ class OrderWhereInput {
   @Field(() => ProductWhereUniqueInput, {
     nullable: true,
   })
-  proId?: ProductWhereUniqueInput;
+  product?: ProductWhereUniqueInput;
 }
 
 export { OrderWhereInput as OrderWhereInput };

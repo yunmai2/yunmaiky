@@ -20,11 +20,11 @@ export const OrderList = (props: ListProps): React.ReactElement => {
       pagination={<Pagination />}
     >
       <Datagrid rowClick="show">
-        <TextField label="orderNO" source="orderNo" />
         <TextField label="ID" source="id" />
         <DateField source="createdAt" label="Created At" />
         <DateField source="updatedAt" label="Updated At" />
-        <ReferenceField label="proID" source="product.id" reference="Product">
+        <TextField label="orderNO" source="orderNo" />
+        <ReferenceField label="product" source="product.id" reference="Product">
           <TextField source={PRODUCT_TITLE_FIELD} />
         </ReferenceField>
       </Datagrid>

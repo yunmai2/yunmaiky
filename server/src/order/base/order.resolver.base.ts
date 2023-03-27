@@ -95,9 +95,9 @@ export class OrderResolverBase {
       data: {
         ...args.data,
 
-        proId: args.data.proId
+        product: args.data.product
           ? {
-              connect: args.data.proId,
+              connect: args.data.product,
             }
           : undefined,
       },
@@ -120,9 +120,9 @@ export class OrderResolverBase {
         data: {
           ...args.data,
 
-          proId: args.data.proId
+          product: args.data.product
             ? {
-                connect: args.data.proId,
+                connect: args.data.product,
               }
             : undefined,
         },
@@ -165,8 +165,8 @@ export class OrderResolverBase {
     action: "read",
     possession: "any",
   })
-  async proId(@graphql.Parent() parent: Order): Promise<Product | null> {
-    const result = await this.service.getProId(parent.id);
+  async product(@graphql.Parent() parent: Order): Promise<Product | null> {
+    const result = await this.service.getProduct(parent.id);
 
     if (!result) {
       return null;

@@ -23,14 +23,6 @@ class Order {
   })
   @IsString()
   @Field(() => String)
-  orderNo!: string;
-
-  @ApiProperty({
-    required: true,
-    type: String,
-  })
-  @IsString()
-  @Field(() => String)
   id!: string;
 
   @ApiProperty({
@@ -50,13 +42,21 @@ class Order {
   updatedAt!: Date;
 
   @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  orderNo!: string;
+
+  @ApiProperty({
     required: false,
     type: () => Product,
   })
   @ValidateNested()
   @Type(() => Product)
   @IsOptional()
-  proId?: Product | null;
+  product?: Product | null;
 }
 
 export { Order as Order };
