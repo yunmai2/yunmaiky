@@ -13,6 +13,10 @@ import { TestDateList } from "./testDate/TestDateList";
 import { TestDateCreate } from "./testDate/TestDateCreate";
 import { TestDateEdit } from "./testDate/TestDateEdit";
 import { TestDateShow } from "./testDate/TestDateShow";
+import { EventList } from "./event/EventList";
+import { EventCreate } from "./event/EventCreate";
+import { EventEdit } from "./event/EventEdit";
+import { EventShow } from "./event/EventShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -52,6 +56,13 @@ const App = (): React.ReactElement => {
           edit={TestDateEdit}
           create={TestDateCreate}
           show={TestDateShow}
+        />
+        <Resource
+          name="Event"
+          list={EventList}
+          edit={EventEdit}
+          create={EventCreate}
+          show={EventShow}
         />
       </Admin>
     </div>
