@@ -20,89 +20,41 @@ const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
   id: "exampleId",
+  createdAt: new Date(),
+  updatedAt: new Date(),
+  firstName: "exampleFirstName",
+  lastName: "exampleLastName",
   username: "exampleUsername",
   password: "examplePassword",
-  lastLoginTime: new Date(),
-  trueName: "exampleTrueName",
-  creatTime: new Date(),
-  openId: "exampleOpenId",
-  sessionKey: "exampleSessionKey",
-  unionId: "exampleUnionId",
-  inviterId: "exampleInviterId",
-  birthday: new Date(),
-  nickName: "exampleNickName",
-  userIdCard: "exampleUserIdCard",
-  avatarUrl: "exampleAvatarUrl",
-  country: "exampleCountry",
-  province: "exampleProvince",
-  city: "exampleCity",
-  language: "exampleLanguage",
-  oauthType: "exampleOauthType",
 };
 const CREATE_RESULT = {
   id: "exampleId",
+  createdAt: new Date(),
+  updatedAt: new Date(),
+  firstName: "exampleFirstName",
+  lastName: "exampleLastName",
   username: "exampleUsername",
   password: "examplePassword",
-  lastLoginTime: new Date(),
-  trueName: "exampleTrueName",
-  creatTime: new Date(),
-  openId: "exampleOpenId",
-  sessionKey: "exampleSessionKey",
-  unionId: "exampleUnionId",
-  inviterId: "exampleInviterId",
-  birthday: new Date(),
-  nickName: "exampleNickName",
-  userIdCard: "exampleUserIdCard",
-  avatarUrl: "exampleAvatarUrl",
-  country: "exampleCountry",
-  province: "exampleProvince",
-  city: "exampleCity",
-  language: "exampleLanguage",
-  oauthType: "exampleOauthType",
 };
 const FIND_MANY_RESULT = [
   {
     id: "exampleId",
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    firstName: "exampleFirstName",
+    lastName: "exampleLastName",
     username: "exampleUsername",
     password: "examplePassword",
-    lastLoginTime: new Date(),
-    trueName: "exampleTrueName",
-    creatTime: new Date(),
-    openId: "exampleOpenId",
-    sessionKey: "exampleSessionKey",
-    unionId: "exampleUnionId",
-    inviterId: "exampleInviterId",
-    birthday: new Date(),
-    nickName: "exampleNickName",
-    userIdCard: "exampleUserIdCard",
-    avatarUrl: "exampleAvatarUrl",
-    country: "exampleCountry",
-    province: "exampleProvince",
-    city: "exampleCity",
-    language: "exampleLanguage",
-    oauthType: "exampleOauthType",
   },
 ];
 const FIND_ONE_RESULT = {
   id: "exampleId",
+  createdAt: new Date(),
+  updatedAt: new Date(),
+  firstName: "exampleFirstName",
+  lastName: "exampleLastName",
   username: "exampleUsername",
   password: "examplePassword",
-  lastLoginTime: new Date(),
-  trueName: "exampleTrueName",
-  creatTime: new Date(),
-  openId: "exampleOpenId",
-  sessionKey: "exampleSessionKey",
-  unionId: "exampleUnionId",
-  inviterId: "exampleInviterId",
-  birthday: new Date(),
-  nickName: "exampleNickName",
-  userIdCard: "exampleUserIdCard",
-  avatarUrl: "exampleAvatarUrl",
-  country: "exampleCountry",
-  province: "exampleProvince",
-  city: "exampleCity",
-  language: "exampleLanguage",
-  oauthType: "exampleOauthType",
 };
 
 const service = {
@@ -187,9 +139,8 @@ describe("User", () => {
       .expect(HttpStatus.CREATED)
       .expect({
         ...CREATE_RESULT,
-        lastLoginTime: CREATE_RESULT.lastLoginTime.toISOString(),
-        creatTime: CREATE_RESULT.creatTime.toISOString(),
-        birthday: CREATE_RESULT.birthday.toISOString(),
+        createdAt: CREATE_RESULT.createdAt.toISOString(),
+        updatedAt: CREATE_RESULT.updatedAt.toISOString(),
       });
   });
 
@@ -200,9 +151,8 @@ describe("User", () => {
       .expect([
         {
           ...FIND_MANY_RESULT[0],
-          lastLoginTime: FIND_MANY_RESULT[0].lastLoginTime.toISOString(),
-          creatTime: FIND_MANY_RESULT[0].creatTime.toISOString(),
-          birthday: FIND_MANY_RESULT[0].birthday.toISOString(),
+          createdAt: FIND_MANY_RESULT[0].createdAt.toISOString(),
+          updatedAt: FIND_MANY_RESULT[0].updatedAt.toISOString(),
         },
       ]);
   });
@@ -224,9 +174,8 @@ describe("User", () => {
       .expect(HttpStatus.OK)
       .expect({
         ...FIND_ONE_RESULT,
-        lastLoginTime: FIND_ONE_RESULT.lastLoginTime.toISOString(),
-        creatTime: FIND_ONE_RESULT.creatTime.toISOString(),
-        birthday: FIND_ONE_RESULT.birthday.toISOString(),
+        createdAt: FIND_ONE_RESULT.createdAt.toISOString(),
+        updatedAt: FIND_ONE_RESULT.updatedAt.toISOString(),
       });
   });
 
@@ -238,9 +187,8 @@ describe("User", () => {
       .expect(HttpStatus.CREATED)
       .expect({
         ...CREATE_RESULT,
-        lastLoginTime: CREATE_RESULT.lastLoginTime.toISOString(),
-        creatTime: CREATE_RESULT.creatTime.toISOString(),
-        birthday: CREATE_RESULT.birthday.toISOString(),
+        createdAt: CREATE_RESULT.createdAt.toISOString(),
+        updatedAt: CREATE_RESULT.updatedAt.toISOString(),
       })
       .then(function () {
         agent

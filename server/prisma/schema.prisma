@@ -8,61 +8,18 @@ generator client {
 }
 
 model User {
-  id              String           @id @default(cuid())
-  username        String           @unique
-  password        String
-  roles           Json
-  lastLoginTime   DateTime         @updatedAt
-  trueName        String?
-  creatTime       DateTime         @default(now())
-  gender          EnumUserGender?
-  hubitusCheckups HubitusCheckup[]
-  openId          String
-  sessionKey      String
-  unionId         String
-  inviterId       String?
-  birthday        DateTime?
-  nickName        String?
-  userIdCard      String?
-  avatarUrl       String?
-  country         String?
-  province        String?
-  city            String?
-  language        String?
-  oauthType       String
-}
-
-model HubitusCheckup {
-  id             String   @id @default(cuid())
-  testTime       DateTime @default(now())
-  currentHabitus String
-  testResult     String
-  countResult    String
-  suggest        String?
-  user           User?    @relation(fields: [userId], references: [id])
-  userId         String?
-}
-
-model Product {
-  id          String   @id @default(cuid())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  productname String
-  price       Float?
-  orders      Order[]
-}
-
-model Order {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  orderNo   String
-  product   Product? @relation(fields: [productId], references: [id])
-  productId String?
+  firstName String?
+  lastName  String?
+  username  String   @unique
+  password  String
+  roles     Json
 }
 
-enum EnumUserGender {
-  Unknown
-  Male
-  Female
+model TestDate {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

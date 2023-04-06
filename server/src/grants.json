@@ -2,6 +2,12 @@
   {
     "role": "user",
     "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "User",
     "action": "create:any",
     "attributes": "*"
   },
@@ -9,12 +15,6 @@
     "role": "user",
     "resource": "User",
     "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "User",
-    "action": "read:own",
     "attributes": "*"
   },
   {
@@ -31,91 +31,31 @@
   },
   {
     "role": "user",
-    "resource": "HubitusCheckup",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HubitusCheckup",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HubitusCheckup",
+    "resource": "TestDate",
     "action": "read:own",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "HubitusCheckup",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "HubitusCheckup",
-    "action": "read:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Product",
+    "resource": "TestDate",
     "action": "create:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Product",
+    "resource": "TestDate",
     "action": "update:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Product",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Product",
+    "resource": "TestDate",
     "action": "delete:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Product",
-    "action": "read:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Order",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Order",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Order",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Order",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Order",
+    "resource": "TestDate",
     "action": "read:any",
     "attributes": "*"
   }
